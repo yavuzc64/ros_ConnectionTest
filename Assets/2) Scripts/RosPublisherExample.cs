@@ -44,7 +44,7 @@ public class RosPublisherExample : MonoBehaviour
             );
 
             // Finally send the message to server_endpoint.py running in ROS
-            ros.Publish(topicName, cubePos);
+            //ros.Publish(topicName, cubePos);
 
             timeElapsed = 0;
         }
