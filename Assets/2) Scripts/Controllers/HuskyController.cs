@@ -11,7 +11,7 @@ public class HuskyController : MonoBehaviour
     public ArticulationBody back_leftWheel;
     public ArticulationBody back_rightWheel;
     public float wheelRadius = 0.165f; // Husky'nin gerçek teker çapı (yaklaşık)
-    public float wheelSeparation = 0.55f * 5;
+    public float wheelSeparation = 0.55f * 20f;
 
     void Start()
     {
@@ -41,8 +41,8 @@ public class HuskyController : MonoBehaviour
             SetWheelVelocity(back_rightWheel, 0f);
             return;
         }
-        float leftVelocity = (linear - angular * wheelSeparation / 2f) / wheelRadius;
-        float rightVelocity = (linear + angular * wheelSeparation / 2f) / wheelRadius;
+        float leftVelocity = (linear - 5 * angular * wheelSeparation / 2f) / wheelRadius;
+        float rightVelocity = (linear + 5 * angular * wheelSeparation / 2f) / wheelRadius;
         SetWheelVelocity(front_leftWheel, leftVelocity);
         SetWheelVelocity(front_rightWheel, rightVelocity);
         SetWheelVelocity(back_leftWheel, leftVelocity);
